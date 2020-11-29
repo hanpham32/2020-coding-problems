@@ -1,10 +1,14 @@
 #include <iostream>
-
+using namespace std;
 int main() {
 	int W;
-	std::cin >> W;
-
-	(W % 2 == 0) ? std::cout << "YES" : std::cout << "NO" ;
-	return 1;
+	cin >> W;
+	if (W == 2) {
+		cout << "NO" << endl;
+	} else if (W % 2 == 0) {
+		cout << "YES" << endl;
+	} else {
+		cout << "NO" << endl;
+	}
 }
 
