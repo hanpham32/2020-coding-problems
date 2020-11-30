@@ -4,22 +4,14 @@ using namespace std;
 
 int main() 
 {
-	int N; 
+	int N, a, b, c; 
 	cin >> N;
-	int ans;
+	int ans=0;
 	for (int i=0; i<N; i++)
 	{
-		int sum = 0;
-		for(int j=0; j<3; j++)
-		{
-			int a;
-			cin >> a;
-			sum += a; 
-		}
-		if (sum >= 2)
-		{
-			ans++;
-		}
+		cin >> a >> b >> c;
+		if (a+b+c >= 2) ans++;
 	}
+
 	cout << ans << endl;
 }
