@@ -10,23 +10,26 @@ int main()
 	cin >> s1 >> s2;
 	transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
 	transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
-
-	long long tots1 = 0;
-	long long tots2 = 0;
-	for(int i=0; i<s1.size(); i++)
+	int i = 0;	
+	bool flag = false; 
+	do
 	{
-		tots1 += static_cast<int>(s1[i]);
-		tots2 += static_cast<int>(s2[i]);
-	}
-	cout << "s1: " << tots1 << endl;
-	cout << "s2: " << tots2 << endl;
-	if (tots1 < tots2)
-	{
-		cout << "-1" << endl;
-	} else if (tots1 > tots2) 
-	{
-		cout << "1" << endl;
-	} else 
+		int a = static_cast<int>(s1[i]);
+		int b = static_cast<int>(s2[i]);
+		if (a > b)
+		{
+			cout << "1" << endl;
+			flag = true;
+			break;
+		} else if  (b > a)
+		{
+			cout << "-1" << endl;
+			flag = true;
+			break;
+		}
+		i++;
+	}while (i < s1.size());
+	if (!flag)
 	{
 		cout << "0" << endl;
 	}
