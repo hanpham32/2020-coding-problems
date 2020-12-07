@@ -1,22 +1,36 @@
 import java.util.*;
-import java.lang.*;
 
-public class Main {
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
+class Main {
+	public static void main(String[] args) throws Exception {
+		Scanner In = new Scanner(System.in); // Create Scanner object
+		int n;
+		n = In.nextInt();
 		
-		String s1, s2, s3, s4;
-		s1 = input.nextInt();
-		s2 = input.nextInt();
-		s3 = input.nextInt();
-		s4 = input.nextInt();
-		char[] chars1 = s1.toCharArray();
-		char[] chars2 = s2.toCharArray();
+		String str1 = In.nextLine();
+		String str2 = In.nextLine();
+		Scanner s1 = new Scanner(str1);
+		Scanner s2 = new Scanner(str2);
+		try {
+			HashSet<Integer> hs1 = new HashSet<Integer>();
+			while (s1.hasNextInt()) {
+				hs1.add(s1.nextInt());
+			}
 
-		List<String> list1 = Arrays.asList(chars1);
-		List<String> list2 = Arrays.asList(chars2);
-		list1.retainAll(list2);
-		System.out.println(list1.size());
+			HashSet<Integer> hs2 = new HashSet<Integer>();
+			while (s2.hasNextInt()) {
+				hs2.add(s2.nextInt());
+			}
+			
+			hs1.retainAll(hs2);
 
+			if (hs1.size() == n) {
+				System.out.println("I become the guy");
+			} else {
+				System.out.println("Oh, my keyboard!");
+			}
+		}
+		catch(NullPointerException e) {
+			System.out.println(e);
+		}
 	}
 }
