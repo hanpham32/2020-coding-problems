@@ -1,5 +1,9 @@
 
-.cpp.swp
-.cpp.un~
-.exe
+Codeforces/.cpp.swp
+Codeforces.cpp.un~
+Codeforces.exe
 
+*.swp
+*.exe
+*.cpp~
+*.un~
