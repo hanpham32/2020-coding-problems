@@ -22,4 +22,6 @@ string longestPalindrome(string s) {
 			maxLen = currLen;
 		}
 	}
+
+	return s.substr(maxIdx, maxLen);
 }
